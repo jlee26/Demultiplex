@@ -18,10 +18,12 @@ zcat 1294_S1_L008_R4_001.fastq.gz | head
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here. I will upload my histograms later.
     2. ```A good quality score cutoff would be to use a high quality score to ensure that the probability of which the base is incorrect is low. To perform downstream analysis or to identify a sample, each individual quality score should be high to prevent high chances of incorrect nucleotide sequencing. For this case, rather than taking the average of the quality scores and determining if this value is below the cutoff, comparing individual quality score value to the cutoff is preferred. If the quality score is averaged, these low quality score outliers may be missed.```
-    3. ```Index1 has 3,976,613 indexes with N base call. Command line: zcat 1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
+    3. ```
+    Index1 has 3,976,613 indexes with N base call. Command line: zcat 1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
+    
     Index2 has 3,328,051 indexes with N base call. Command line: zcat 1294_S1_L008_R3_001.fastq.gz |
  sed -n '2~4p' | grep "N" | wc -l```
-    
+    ```
 ## Part 2
 1. Define the problem
 ```The problem is that the index hopping can occur during RNA-seq lab, therefore, an algorithm should be made to determine if an index has properly ligated or if we can observe index hopping. The reads that have index hopping is placed in a separate file.```
