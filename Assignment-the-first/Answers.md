@@ -16,7 +16,7 @@ zcat 1294_S1_L008_R4_001.fastq.gz | head
 | 1294_S1_L008_R4_001.fastq.gz | read2 |
 
 2. Per-base NT distribution
-    1. Use markdown to insert your 4 histograms here.
+    1. Use markdown to insert your 4 histograms here. I will upload my histograms later.
     2. ```A good quality score cutoff would be to use a high quality score to ensure that the probability of which the base is incorrect is low. To perform downstream analysis or to identify a sample, each individual quality score should be high to prevent high chances of incorrect nucleotide sequencing. For this case, rather than taking the average of the quality scores and determining if this value is below the cutoff, comparing individual quality score value to the cutoff is preferred. If the quality score is averaged, these low quality score outliers may be missed.```
     3. ```Index1 has 3,976,613 indexes with N base call. Command line: zcat 1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
     Index2 has 3,328,051 indexes with N base call. Command line: zcat 1294_S1_L008_R3_001.fastq.gz |
@@ -118,3 +118,34 @@ h) i2_qscore = 4th line of index2 file (R3)
     2. Function headers (name and parameters)
     3. Test examples for individual functions
     4. Return statement
+```
+def rev_comp(seq:str) -> str:
+```A function that takes in a string of DNA and returns the reverse compliment starting from 5' to 3'.```
+1. Read the string backwards.
+2. Make a dictionary where if we see a specific letter, we can call a different letter.
+return reverse compliment of str that starts from 5'.
+
+input: GGGCTAT
+expected output: ATAGCCC
+```
+```
+def convert_phred(ltr:str)->int:
+```Converts ascii character into a numerical number (Phred +33) ```
+1. Takes in a string(only a single character).
+2. Convert the character into a numerical number and subtract 33.
+return the numberical number
+
+input: 0
+expected outcome: 48
+```
+
+```
+def ave_qual_score(score:str)->float:
+```Takes in a string of quality scores and return a numerical average quality score (Phred +33).```
+1. Take in a string of the quality scores. Call the function convert_phred to return the the ascii letters into quality score.
+2. Take the average of the numerical number
+reurn average quality scores
+
+input: FFF
+expected output: 37
+```
