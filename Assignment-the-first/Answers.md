@@ -16,7 +16,8 @@ zcat 1294_S1_L008_R4_001.fastq.gz | head
 | 1294_S1_L008_R4_001.fastq.gz | read2 |
 
 2. Per-base NT distribution
-    1. Use markdown to insert your 4 histograms here. I will upload my histograms later.
+    1. Use markdown to insert your 4 histograms here.
+    ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index1.png)
     2. ```A good quality score cutoff would be to use a high quality score to ensure that the probability of which the base is incorrect is low. To perform downstream analysis or to identify a sample, each individual quality score should be high to prevent high chances of incorrect nucleotide sequencing. For this case, rather than taking the average of the quality scores and determining if this value is below the cutoff, comparing individual quality score value to the cutoff is preferred. If the quality score is averaged, these low quality score outliers may be missed.```
     3. ```
     Index1 has 3,976,613 indexes with N base call. Command line: zcat 1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
