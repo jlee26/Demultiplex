@@ -8,14 +8,3 @@ Per-base nucleotide distribution of Read 1, Read 2, Index 1, and Index 2 distrib
 ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index1.png)
 ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index2.png)
 ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read1.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read2.png)
-Per-base nucleotide distribution of Read 1, Read 2, Index 1, and Index 2 distribution
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index1.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index2.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read1.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read2.png)
-Per-base nucleotide distribution of Read 1, Read 2, Index 1, and Index 2 distribution
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index1.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index2.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read1.png)
-![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/read2.png)
