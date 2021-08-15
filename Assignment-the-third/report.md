@@ -1,15 +1,8 @@
 # Demultiplex Reports
-<<<<<<< HEAD
 | | Undetermined | Index Hopping | Matched | Index(es) are reverse complimented but not found in the list of barcodes (These records are included in the undetermined files) |
 | ------ | :------: | :------: | :------: | :------: |
 | Number of records: | 43310765 | 15437678 | 304498292 | 30817 |
 | Percent: | 11.923235868864726 | 4.2499151437658485 | 83.82684898736943 | 8.483765174104042e-03 |
-=======
-| | Undetermined | Index Hopping | Matched | Index(es) are reverse complimented but not found in the list of barcodes (included in undetermined files) |
-| ------ | :------: | :------: | :------: | :------: |
-| Number of records: | 43310765 | 15437678 | 304498292 | 30817 |
-| Percent: | 11.923235868864726 | 4.2499151437658485 | 83.82684898736943 | 8.483765174104042e-05 |
->>>>>>> ef876f6f7084983d8847bc8e7adf1c0c06da5054
 
 ### Number of records for each bucket
 | Bucket | Count | Percent |
@@ -39,6 +32,8 @@
 | AGAGTCCA | 10027053 | 3.292975121187215 |
 | AGGATAGC | 7657527 | 2.514801298130106 |
 | Total:   | 304498292 | 100 |
+
+
 ### Distribution of Nucleotides for Read 1, Read 2, Index 1, and Index 2
 ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index1.png)
 ![alt text](https://github.com/jlee26/Demultiplex/blob/master/Assignment-the-first/index2.png)
