@@ -89,7 +89,9 @@ counter_hopped = 0
 check_counter_rev_comp_but_nobarcode = 0
 qscore_cutoff = args.qscore_cutoff
 
-
+dict_counter = {}
+for index, d in enumerate(dict_index.items()):
+    dict_counter[d[0]] = 0
 
 ### demultiplex code
 while True:
@@ -157,6 +159,9 @@ while True:
                                 # i2_seqname = "tr2_" + i1_seq
                                 dict_openfiles.get(i1_seqname).write(header + "\n" + r1_seq + "\n" + plus + "\n" + r1_qscore + "\n")
                                 dict_openfiles.get(i2_seqname).write(header + "\n" + r2_seq + "\n" + plus + "\n" + r2_qscore + "\n")
+                                if i1_seq in dict_counter.keys():
+                                    dict_counter[i1_seq] += 1
+                                    break
                                 # ##tests
                                 # dict_topenfiles.get(i1_seqname).write(header + "\n" + r1_seq + "\n" + plus + "\n" + r1_qscore + "\n")
                                 # dict_topenfiles.get(i2_seqname).write(header + "\n" + r2_seq + "\n" + plus + "\n" + r2_qscore + "\n")
@@ -189,10 +194,24 @@ while True:
 
 with open("./report.md", "w") as wf:
     wf.write("# Demultiplex Reports" + "\n")
-    wf.write("| | Undetermined | Index Hopping | Matched | Index(es) are reverse complimented but not found in the list of barcodes |" + "\n")
+    wf.write("| | Undetermined | Index Hopping | Matched | Index(es) are reverse complimented but not found in the list of barcodes (These records are included in the undetermined files) |" + "\n")
     wf.write("| ------ | :------: | :------: | :------: | :------: |" + "\n")
     wf.write(f"| Number of records: | {counter_undet} | {counter_hopped} | {counter_matched} | {check_counter_rev_comp_but_nobarcode} |" + "\n")
-    wf.write(f"| Percent: | {counter_undet/(counter_undet + counter_hopped + counter_matched)} | {counter_hopped/(counter_undet + counter_hopped + counter_matched)} | {counter_matched/(counter_undet + counter_hopped + counter_matched)} | {check_counter_rev_comp_but_nobarcode/(counter_undet + counter_hopped + counter_matched)} |" + "\n" + "\n")
+    wf.write(f"| Percent: | {counter_undet/(counter_undet + counter_hopped + counter_matched)*100} | {counter_hopped/(counter_undet + counter_hopped + counter_matched)*100} | {counter_matched/(counter_undet + counter_hopped + counter_matched)*100} | {check_counter_rev_comp_but_nobarcode/(counter_undet + counter_hopped + counter_matched)*100} |" + "\n" + "\n")
+    
+    wf.write("### Number of records for each bucket" + "\n")
+    wf.write("| Bucket | Count | Percent |" + "\n")
+    wf.write("| :----: | :----: | :----: |" + "\n")
+    count_total_match = 0
+    count_percent_match = 0
+    for index, dic in enumerate(dict_counter.items()):
+        wf.write(f"| {dic[0]} | {dic[1]} | {(dic[1]/counter_matched)*100} |" + "\n")
+        count_total_match += dic[1]
+        count_percent_match += (dic[1]/counter_matched)*100
+    wf.write(f"| Total: | {count_total_match} | {count_percent_match} |" + "\n" + "\n")
+
+    
+    
     wf.write("### Distribution of Nucleotides for Read 1, Read 2, Index 1, and Index 2" + "\n")
 
     images = ["index1.png", "index2.png", "read1.png", "read2.png"]
